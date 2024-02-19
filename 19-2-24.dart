@@ -147,4 +147,117 @@ void main ()
   sp.specialization = "Eye";
   sp.display();
 }
+
+------------------------------------------------------encapsulation-----------------------------------------
+
   
+class student{
+  String? _name;
+  int?_age;
+  void setName(String name)
+  {
+    this._name=name;
+
+  }
+  void setAge(int age)
+  {
+    this._age=age;
+  }
+  String getName(){
+    return this._name!;
+  }
+  int getage(){
+    return this._age!;
+  }
+}
+void main(){
+  student st=student();
+      st.setName("ABCD");
+      st.setAge(12);
+      print(st.getName());
+      print(st.getage());
+
+}
+
+
+
+-------------------------------------polymorphism-----------------------------------
+
+  class vehicle
+{
+  void run()
+  {
+    print("vehicle is running");
+  }
+}
+
+class car extends vehicle
+{
+  @override
+  void run()
+  {
+    print ("car is running");
+  }
+}
+
+class bus extends vehicle
+{
+  @override
+  void run ()
+  {
+    print ("bus is running ");
+  }
+}
+
+void main ()
+{
+  vehicle v = vehicle();
+  v.run();
+  car c = car();
+  c.run();
+  bus b = bus();
+  b.run();
+}
+
+
+---------------------------------abstract-------------------------
+
+  abstract class vehicle
+{
+  void start();
+  void stop();
+}
+
+class car extends vehicle
+{
+  void start()
+  {
+    print ("car is starting");
+  }
+  void stop()
+  {
+    print ("car is stopping");
+  }
+}
+
+class bus extends vehicle
+{
+  void start ()
+  {
+    print ("bus is starting ");
+  }
+  void stop()
+  {
+    print ("bus is stopping");
+  }
+}
+
+void main ()
+{
+  bus b = bus();
+  b.start();
+  b.stop();
+  car c = car();
+  c.start();
+  c.stop();
+}
